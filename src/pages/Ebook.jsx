@@ -105,7 +105,7 @@ function Ebook() {
               <br/>
               <div className="botoes">
                 <button className="card-button" onClick={() => openModal(article)}>Ler</button>
-                <button className="close-button" onClick={() => openConfirmDialog(article)}>Excluir</button>
+                <button id='excluir-card' className="close-button" onClick={() => openConfirmDialog(article)}>Excluir</button>
               </div>
               <br/>
             </div>
