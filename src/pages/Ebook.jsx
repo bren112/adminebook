@@ -19,7 +19,6 @@ function Ebook() {
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [loading, setLoading] = useState(true); // Estado de carregamento
 
-  // Fetch articles from Supabase
   useEffect(() => {
     const fetchArticles = async () => {
       try {
@@ -106,7 +105,7 @@ function Ebook() {
               <br/>
               <div className="botoes">
                 <button className="card-button" onClick={() => openModal(article)}>Ler</button>
-                <button className="close-button" onClick={() => openConfirmDialog(article)}>X</button>
+                <button className="close-button" onClick={() => openConfirmDialog(article)}>Excluir</button>
               </div>
               <br/>
             </div>
