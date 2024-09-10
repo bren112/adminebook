@@ -8,6 +8,7 @@ import Cadastrar from "./pages/Cadastrar";
 import Login from "./pages/Login";
 import Footer from "./components/footer";
 import Criar from "./pages/Criar";
+import HomePage from "./pages/PageHome";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Navbar />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<HomePage />} />
             <Route path="/gu" element={<Home />} />
             <Route path="/noticias" element={<Noticias />} />
             <Route path="/ebook" element={<Ebook />} />
