@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'; 
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; 
 import { supabase } from './supabaseclient';
@@ -13,15 +13,32 @@ function Criar() {
     const [imagem, setImagem] = useState('');
     const [snackbarOpen, setSnackbarOpen] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [descError, setDescError] = useState('');
     const quillRef = useRef(null);
 
     const handleChange = (value) => {
         setConteudo(value);
     };
 
+    const handleDescChange = (e) => {
+        const value = e.target.value;
+        if (value.length <= 80) {
+            setDesc(value);
+            setDescError('');
+        } else {
+            setDescError('A descrição pode ter no máximo 80 caracteres.');
+        }
+    };
+
     const salvar = async () => {
         if (titulo.trim() === '' || desc.trim() === '' || conteudo.trim() === '') {
             setSnackbarMessage('Título, descrição e conteúdo não podem estar vazios.');
+            setSnackbarOpen(true);
+            return;
+        }
+
+        if (desc.length > 80) {
+            setSnackbarMessage('A descrição excede o limite de 80 caracteres.');
             setSnackbarOpen(true);
             return;
         }
@@ -87,7 +104,6 @@ function Criar() {
         <>
         <br/>
     
-
         <h1 id='h1'>Criar Ebook</h1>
         <div className='centro'>
             <div className="conteudo">
@@ -105,9 +121,11 @@ function Criar() {
                 <label>Descrição:</label>
                 <textarea
                     value={desc}
-                    onChange={(e) => setDesc(e.target.value)}
+                    onChange={handleDescChange}
                     placeholder="Digite a descrição"
                 />
+                <div>{desc.length}/80 caracteres</div>
+                {descError && <p className="error">{descError}</p>}
             </div>
             <div className="form-group">
                 <label>Imagem (URL):</label>
@@ -125,7 +143,6 @@ function Criar() {
                 onChange={handleChange}
                 modules={modules}
             />
-
 
             <Snackbar
                 open={snackbarOpen}
