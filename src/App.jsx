@@ -38,6 +38,7 @@ function App() {
             <label>Usuário:</label>
             <input
               id="input_user"
+              placeholder="User:"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -48,6 +49,7 @@ function App() {
             <label>Senha:</label>
             <input
               id="input_user"
+              placeholder="Senha:"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
