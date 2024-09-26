@@ -35,7 +35,7 @@ function App() {
 
         <form onSubmit={handleLogin}>
           <div>
-            <label>Usuário:</label>
+            <h4>Usuário:</h4>
             <input
               id="input_user"
               placeholder="User:"
@@ -46,7 +46,8 @@ function App() {
             />
           </div>
           <div>
-            <label>Senha:</label>
+          <h4>Senha:</h4>
+
             <input
               id="input_user"
               placeholder="Senha:"
