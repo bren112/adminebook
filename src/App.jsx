@@ -1,16 +1,68 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from "./pages/Home";
 import Noticias from "./pages/Noticias";
 import Ebook from "./pages/Ebook";
 import Cadastrar from "./pages/Cadastrar";
-import Login from "./pages/Login";
 import Footer from "./components/footer";
 import Criar from "./pages/Criar";
 import HomePage from "./pages/PageHome";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (username === "admin" && password === "1234") { 
+      setIsAuthenticated(true);
+    } else {
+      alert("Usuário ou senha incorretos");
+    }
+  };
+
+  if (!isAuthenticated) {
+    
+    return (
+      <>
+        <br/>
+
+        <h1 id="title">Login ADM</h1>
+        <br/>
+      <div  className="container_admin">
+
+        <form onSubmit={handleLogin}>
+          <div>
+            <label>Usuário:</label>
+            <input
+              id="input_user"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label>Senha:</label>
+            <input
+              id="input_user"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+        <br/>
+
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+      </>
+    );
+  }
+
   return (
     <BrowserRouter>
       <div id="root">
@@ -22,7 +74,6 @@ function App() {
             <Route path="/noticias" element={<Noticias />} />
             <Route path="/ebook" element={<Ebook />} />
             <Route path="/cadastrar" element={<Cadastrar />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/criar" element={<Criar />} />
           </Routes>
         </div>
