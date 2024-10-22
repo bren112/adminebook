@@ -74,7 +74,7 @@ function Noticias() {
 
   return (
     <div className="aviso-container">
-      <h1 id="h1">Criar Aviso</h1>
+      <h1 id="h1">Criar Recado</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="titulo">Título:</label>
