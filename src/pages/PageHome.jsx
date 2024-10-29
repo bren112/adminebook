@@ -20,7 +20,7 @@ function HomePage(){
             <div className="dir">
                 <h1 id='h2'>E-BOOK</h1>
                 
-                <p id='p'>Gerencie e Controle seus Livros e Clientes!</p>
+                <p id='p'>Gerencie e Controle seus Ebook's e Usuários!</p>
                 <br/>
                 <Link to="/ebook">
             <button id='controlar' className='desktop'>Controlar</button>
