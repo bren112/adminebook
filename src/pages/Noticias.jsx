@@ -74,7 +74,7 @@ function Noticias() {
 
   return (
     <div className="aviso-container">
-      <h1 id="h1">Criar Recado</h1>
+      <h1 id="h1">Criar Aviso</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="titulo">Título:</label>
@@ -108,7 +108,7 @@ function Noticias() {
         {avisos.map((aviso) => (
           <li key={aviso.id} className="aviso-item">
             {'"'+aviso.titulo+'"'}
-            <button id='excluir' onClick={() => handleDelete(aviso.id)}>Remover</button>
+            <button id='excluir' onClick={() => handleDelete(aviso.id)}>Excluir</button>
           </li>
         ))}
       </ul>
