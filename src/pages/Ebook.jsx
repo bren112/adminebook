@@ -100,12 +100,12 @@ function Ebook() {
             <div className="card" key={article.id}>
               <img src={article.imagem} alt={article.titulo} className="card-image" /> 
               
-              <h2 id='title' className="card-title">{'"'+article.titulo+'"'}</h2>
+              {/* <h2 id='title' className="card-title">{'"'+article.titulo+'"'}</h2> */}
               <p id='p' className="card-desc">{article.desc}</p>
               <br/>
               <div className="botoes">
                 <button className="card-button" onClick={() => openModal(article)}>Ler</button>
-                <button id='excluir-card' className="close-button" onClick={() => openConfirmDialog(article)}>Remover</button>
+                <button id='excluir-card' className="close-button" onClick={() => openConfirmDialog(article)}>Excluir</button>
               </div>
               <br/>
             </div>
@@ -144,7 +144,7 @@ function Ebook() {
             Cancelar
           </Button>
           <Button onClick={deleteArticle} color="secondary">
-            Excluir
+            Remover
           </Button>
         </DialogActions>
       </Dialog>
