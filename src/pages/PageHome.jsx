@@ -1,5 +1,5 @@
 
-import Img from './home.png';
+import Img from './engre.jpeg';
 import './myhome.css';
 import { Link } from "react-router-dom";
 
