@@ -22,7 +22,7 @@ function Navbar() {
       </div>
     <ul id='links' className={active}>
         <li className="nav__item"><Link to="/" className="nav__link">Home</Link></li>
-        <li className="nav__item"><Link to="/ebook" className="nav__link">Excluir E-BOOKS</Link></li>
+        <li className="nav__item"><Link to="/ebook" className="nav__link">Remover E-BOOKS</Link></li>
         <li className="nav__item"><Link to="/criar" className="nav__link">Criar E-BOOKS</Link></li>
         <li className="nav__item"><Link to="/noticias" className="nav__link">Criar/G AVISOS</Link></li>
         <li className="nav__item"><Link to="/gu" className="nav__link">Gerenciar Usuários</Link></li>
